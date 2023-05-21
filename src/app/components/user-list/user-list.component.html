@@ -1,0 +1,25 @@
+<div class="mb-3">
+  <label for="name">Name: &nbsp;</label>
+  <input type="text" id="name" class="me-3" [(ngModel)]="newUser.name" />
+
+  <label for="email">Email: &nbsp;</label>
+  <input type="email" id="email" [(ngModel)]="newUser.email" />
+</div>
+<button class="btn btn-primary" (click)="addUser()">Add User</button>
+
+<button class="btn btn-primary ms-3" (click)="sortByName()">Sort by Name</button>
+
+<table class="table table-bordered table-striped mt-3">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+  </tbody>
+</table>
